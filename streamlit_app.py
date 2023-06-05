@@ -37,13 +37,13 @@ st.markdown("<h1 style='text-align: center; color: black;'>POLICE NATIONALE - GE
 
 # Nomnre total d'avis
 st.markdown(f"## Nombre total d\'avis : {nbr_total_avis}")
-col1, col2, col3 = st.columns(3)
+col1, col2, col3 = st.beta_columns(3)
 col1.metric("Nombre d'avis Neutres", f"{nbr_avis_neu}")
 col2.metric("Nombre d'avis Positifs", f"{nbr_avis_pos}")
 col3.metric("Nombre d'avis Négatifs", f"{nbr_avis_neg}")
 
 #
-col_1, col_2 = st.columns(2)
+col_1, col_2 = st.beta_columns(2)
 with col_1:
     # Le service qui a le plus d'avis
     services = dataset.groupby('Administration').size().reset_index(name="Nombre d'avis")
@@ -207,7 +207,7 @@ st_map = folium_static(map_region_by_label, width=900, height=700)
 
 # Obtention des topics
 st.markdown("## Les techniques d'obtention de topics")
-c1, c2 = st.columns(2)
+c1, c2 = st.beta_columns(2)
 
 with c1:
     st.subheader("LDA")
