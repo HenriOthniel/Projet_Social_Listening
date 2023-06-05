@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from streamlit_folium import folium_static
+from streamlit_folium import st_folium
 import folium
 import geopandas as gpd
 import matplotlib.pyplot as plt
@@ -155,7 +155,7 @@ choropleth.geojson.add_child(
     folium.features.GeoJsonTooltip(['nom', 'Nbr_Avis'], labels=False)
 )
 
-st_map = folium_static(map_region_by_avis, width=900, height=700)
+st_map = st_folium(map_region_by_avis, width=900, height=700)
 
 # Nombre d'avis par région et par label
 st.markdown("## Nombre d'avis par région et par label")
@@ -203,7 +203,7 @@ choropleth.geojson.add_child(
     folium.features.GeoJsonTooltip(['nom', 'label'], labels=False)
 )
 
-st_map = folium_static(map_region_by_label, width=900, height=700)
+st_map = st_folium(map_region_by_label, width=900, height=700)
 
 # Obtention des topics
 st.markdown("## Les techniques d'obtention de topics")
